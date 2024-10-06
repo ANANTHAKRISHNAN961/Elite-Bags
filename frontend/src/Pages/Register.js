@@ -15,7 +15,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost/Elite%20bags/register.php', formData);
+      const response = await axios.post(process.env.REACT_APP_API_URL + '/register.php', formData);
       console.log(response.data);
 
       setSuccessMessage('Registration successful. Redirecting to sign-in page...');

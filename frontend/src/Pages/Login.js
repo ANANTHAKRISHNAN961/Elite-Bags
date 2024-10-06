@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost/Elite%20bags/login.php', formData)
+    axios.post(process.env.REACT_APP_API_URL + '/login.php', formData)
       .then(response => {
         if (response.data.message === 'Login successful') {
           // Update the user state using the login function from UserContext

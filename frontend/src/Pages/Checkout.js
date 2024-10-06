@@ -62,7 +62,7 @@ const Checkout = () => {
       saveCard
     };
   
-    axios.post('http://localhost/Elite%20bags/checkout.php', orderDetails)
+    axios.post(process.env.REACT_APP_API_URL + '/checkout.php', orderDetails)
       .then(response => {
         console.log('Server response:', response.data); // Log the entire response data for debugging
         if (response.data.status === 'success') {
@@ -83,7 +83,7 @@ const Checkout = () => {
     if (user && user.id) {
       const fetchUserData = async () => {
         try {
-          const response = await axios.get(`http://localhost/Elite%20bags/checkExistingDetails.php?userId=${user.id}`);
+          const response = await axios.get(process.env.REACT_APP_API_URL + `/checkExistingDetails.php?userId=${user.id}`);
           setUserData(response.data); // Set address if available
         } catch (error) {
           console.error('Error fetching user data:', error);

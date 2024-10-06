@@ -11,7 +11,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost/Elite%20bags/get_products.php');
+        const response = await axios.get(process.env.REACT_APP_API_URL + '/get_products.php');
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);

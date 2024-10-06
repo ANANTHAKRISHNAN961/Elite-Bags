@@ -7,12 +7,12 @@ const Carousel = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost/Elite bags/api.php') // Adjusted endpoint URL
+    axios.get(process.env.REACT_APP_API_URL + '/api.php') // Adjusted endpoint URL
       .then(response => {
         // Adjust image paths received from the API
         const adjustedProducts = response.data.map(product => ({
           ...product,
-          image: `http://localhost/Elite bags/${product.image}` // Assuming image path in database includes 'Images/'
+          image: process.env.REACT_APP_API_URL + `/${product.image}` // Assuming image path in database includes 'Images/'
         }));
         setProducts(adjustedProducts);
       })

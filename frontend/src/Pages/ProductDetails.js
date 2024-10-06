@@ -19,9 +19,9 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const productResponse = await axios.get(`http://localhost/Elite%20bags/api.php?id=${id}`);
+        const productResponse = await axios.get(process.env.REACT_APP_API_URL + `/api.php?id=${id}`);
         const fetchedProduct = productResponse.data[0];
-        fetchedProduct.image = `http://localhost/Elite%20bags/${fetchedProduct.image}`;
+        fetchedProduct.image = process.env.REACT_APP_API_URL + `/${fetchedProduct.image}`;
         setProduct(fetchedProduct);
       } catch (error) {
         console.error('Error fetching product details:', error);
@@ -31,7 +31,7 @@ const ProductDetails = () => {
 
     const fetchProductDetails = async () => {
       try {
-        const detailsResponse = await axios.get(`http://localhost/Elite%20bags/api_details.php?id=${id}`);
+        const detailsResponse = await axios.get(process.env.REACT_APP_API_URL + `/api_details.php?id=${id}`);
         setDetails(detailsResponse.data.details);
       } catch (error) {
         console.error('Error fetching additional product details:', error);

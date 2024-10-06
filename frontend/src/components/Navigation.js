@@ -2,12 +2,12 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { BiCart, BiUser } from 'react-icons/bi';
 import { useUser } from '../components/UserContext';
-import { CartContext } from '../components/CartContext'; // Import CartContext
+import { CartContext } from '../components/CartContext'; 
 
 const Navigation = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const { user, logout } = useUser();
-  const { cartCount } = useContext(CartContext); // Use CartContext to get cart count
+  const { cartCount } = useContext(CartContext); 
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -23,16 +23,16 @@ const Navigation = ({ onSearch }) => {
   };
 
 
-  const serverImageUrl = 'http://localhost/Elite%20bags/logo.jpeg';
+  const serverImageUrl = process.env.REACT_APP_API_URL + '/logo.jpeg';
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <Link to="/" className="navbar-brand">
         <img src={serverImageUrl} alt="Elite Bags Logo" style={{
               height: '50px',
-              width: '50px', // Ensure the width and height are the same for a round shape
-              borderRadius: '50%', // Make the image round
-              objectFit: 'cover', // Ensure the image fills the circle without stretching
+              width: '50px', 
+              borderRadius: '50%', 
+              objectFit: 'cover',
               marginRight: '10px'
             }}/>
           Elite Bags

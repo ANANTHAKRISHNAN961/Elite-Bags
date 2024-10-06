@@ -8,12 +8,12 @@ const Cards = ({ searchQuery }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost/Elite%20bags/api.php')
+    axios.get(process.env.REACT_APP_API_URL + '/api.php')
       .then(response => {
         // Adjust image paths received from the API
         const adjustedProducts = response.data.map(product => ({
           ...product,
-          image: `http://localhost/Elite%20bags/${product.image}` // Assuming image path in database includes 'Images/'
+          image: process.env.REACT_APP_API_URL + `/${product.image}` // Assuming image path in database includes 'Images/'
         }));
         setProducts(adjustedProducts);
       })

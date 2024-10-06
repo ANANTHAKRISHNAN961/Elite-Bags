@@ -18,7 +18,7 @@ const AddProduct = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost/Elite%20bags/api_categories.php');
+      const response = await axios.get(process.env.REACT_APP_API_URL + '/api_categories.php');
       setCategories(response.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
@@ -44,7 +44,7 @@ const AddProduct = () => {
     formData.append('image', image);
 
     try {
-      const response = await axios.post('http://localhost/Elite%20bags/api.php', formData, {
+      const response = await axios.post(process.env.REACT_APP_API_URL + '/api.php', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
