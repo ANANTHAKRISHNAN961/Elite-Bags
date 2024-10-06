@@ -1,0 +1,35 @@
+/* Carousel item height */
+.c-item {
+  height: 480px;
+  background-color:  #e8f7e4;
+}
+
+/* Image styling */
+.c-image {
+  height: 100%;
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  mix-blend-mode: multiply;
+}
+
+/* Image hover effect */
+.c-image:hover {
+  transform: scale(1.05);
+  filter: brightness(85%);
+}
+
+/* Custom styles for previous button */
+.carousel-control-prev-icon {
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000000" viewBox="0 0 16 16"><path d="M11.354 1.354a.5.5 0 0 1 0 .707L5.707 7.707l5.647 5.647a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>');
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+}
+
+/* Custom styles for next button */
+.carousel-control-next-icon {
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000000" viewBox="0 0 16 16"><path d="M4.646 14.646a.5.5 0 0 1 0-.707L10.293 8 4.646 2.354a.5.5 0 1 1 .708-.708l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708 0z"/></svg>');
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+}

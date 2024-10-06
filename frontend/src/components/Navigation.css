@@ -1,0 +1,47 @@
+/* Custom CSS for cart icon */
+.cart-icon {
+  position: relative;
+  font-size: 1.5rem; /* Adjust the size as needed */
+  color: #333; /* Change the color */
+  margin-left: 10px; /* Adjust the margin as needed */
+  transition: color 0.3s ease, transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.cart-icon:hover {
+  color: #007bff; /* Change the color on hover */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  transform: scale(1.2); /* Add a scaling effect on hover */
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+/* Quantity controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 5px;
+}
+
+/* Toast Notification */
+.Toastify__toast--success {
+  background: #28a745;
+}
