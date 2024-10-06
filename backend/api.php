@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $imagePath = 'Images/' . basename($_FILES['image']['name']); // Get the image filename
 
         // Corrected the upload directory path
-        $uploadDir = 'C:/xampp/htdocs/Elite bags/Images/';
+        $uploadDir = 'C:/xampp/htdocs/EliteBags_Backend/Images/';
         $uploadPath = $uploadDir . basename($_FILES['image']['name']);
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadPath)) {

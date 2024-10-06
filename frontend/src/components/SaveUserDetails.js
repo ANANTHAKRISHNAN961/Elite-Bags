@@ -10,7 +10,7 @@ const SaveUserDetails = () => {
   const handleSave = () => {
     const userId = 1; // Replace with actual userId
 
-    axios.post('http://localhost/Elite bags/saveUserDetails.php', { 
+    axios.post(process.env.REACT_APP_API_URL +'/saveUserDetails.php', { 
       userId, 
       address, 
       cardNumber, 

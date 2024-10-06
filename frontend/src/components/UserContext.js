@@ -27,7 +27,7 @@ export const UserProvider = ({ children }) => {
   const saveAddress = (address) => {
     if (user) {
       setUser({ ...user, address });
-      axios.post('http://localhost/Elite bags/saveAddress.php', { userId: user.id, address })
+      axios.post(process.env.REACT_APP_API_URL +'/saveAddress.php', { userId: user.id, address })
         .then(response => {
           console.log('Address saved successfully');
         })
@@ -39,7 +39,7 @@ export const UserProvider = ({ children }) => {
 
   const saveCardDetails = (cardDetails) => {
     if (user) {
-      axios.post('http://localhost/Elite bags/saveCard.php', { userId: user.id, cardDetails })
+      axios.post(process.env.REACT_APP_API_URL +'/saveCard.php', { userId: user.id, cardDetails })
         .then(response => {
           console.log('Card details saved successfully');
         })

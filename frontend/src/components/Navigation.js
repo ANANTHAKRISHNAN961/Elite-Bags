@@ -60,7 +60,7 @@ const Navigation = ({ onSearch }) => {
                 Products
               </Link>
             </li>
-            {user && user.roles.includes('admin') && (
+            {user && user.roles.includes('Admin') && (
               <li className="nav-item dropdown">
                 <Link
                   to="#"

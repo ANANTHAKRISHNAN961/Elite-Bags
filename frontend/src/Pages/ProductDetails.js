@@ -21,7 +21,7 @@ const ProductDetails = () => {
       try {
         const productResponse = await axios.get(process.env.REACT_APP_API_URL + `/api.php?id=${id}`);
         const fetchedProduct = productResponse.data[0];
-        fetchedProduct.image = process.env.REACT_APP_API_URL + `/${fetchedProduct.image}`;
+        fetchedProduct.image = process.env.REACT_APP_API_URL + `/Images/${fetchedProduct.image}`;
         setProduct(fetchedProduct);
       } catch (error) {
         console.error('Error fetching product details:', error);

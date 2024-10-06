@@ -12,7 +12,7 @@ const Carousel = () => {
         // Adjust image paths received from the API
         const adjustedProducts = response.data.map(product => ({
           ...product,
-          image: process.env.REACT_APP_API_URL + `/${product.image}` // Assuming image path in database includes 'Images/'
+          image: process.env.REACT_APP_API_URL + `/Images/${product.image}` // Assuming image path in database includes 'Images/'
         }));
         setProducts(adjustedProducts);
       })

@@ -40,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Get the user ID of the newly inserted user
         $userId = mysqli_insert_id($conn);
 
-        // Insert the default role (assuming role_id = 1 is for 'customer')
-        $roleQuery = "INSERT INTO user_roles (user_id, role_id) VALUES ($userId, 1)";
+        // Insert the default role (assuming role_id = 2 is for 'customer')
+        $roleQuery = "INSERT INTO user_roles (user_id, role_id) VALUES ($userId, 2)";
         mysqli_query($conn, $roleQuery);
 
         // Registration successful

@@ -49,7 +49,7 @@ const Products = () => {
             {/* Wrap each product card in a Link component */}
             <Link to={`/products/${product.id}`} className="product-link">
               <Card className="product-card">
-                <Card.Img variant="top" src={`http://localhost/Elite%20bags/${product.image}`} />
+                <Card.Img variant="top" src={process.env.REACT_APP_API_URL + `/Images/${product.image}`} />
                 <Card.Body>
                   <Card.Title>{product.name}</Card.Title>
                   <Card.Text>{product.price}</Card.Text>
